@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEMCAB Infographic | SMK Petagas</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        vibrant: {
+                            teal: '#0d9488',
+                            orange: '#f97316',
+                            purple: '#6366f1',
+                            amber: '#f59e0b',
+                            emerald: '#10b981'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 360px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-cyan-500 selection:text-white">
+
+    <!-- PALETTE SELECTION: Energetic & Tech Vibrant (Navy #0f172a, Sky Blue #0284c7, Coral Orange #f97316, Purple #6366f1, Emerald #10b981) -->
+
+    <!-- NARRATIVE & STRUCTURAL PLAN:
+         1. Hero Header: STEMCAB Identity, Slogan, and Key Performance Indicators Summary Cards.
+         2. Problem & Paradigm Shift: Comparing fragmented guidance vs. STEMCAB integrated ecosystem.
+         3. Core Framework (4 Component Pipeline): Explore -> Experience -> Connect -> Navigate HTML visual flow.
+         4. Initiatives Spectrum: Visual breakdown of all 7 key programs & student exposure distribution.
+         5. Data & Impact Analytics: Comparative charts (2025 vs 2026 enrolment rates & student domain interest).
+         6. Impact Matrix & Sustainability Roadmap: Tri-fold impact evaluation and long-term sustainability strategy.
+    -->
+
+    <!-- VISUALIZATION CHOICES SUMMARY:
+         - Data Point 1: 2025 vs 2026 STEM Stream Enrolment Shift -> Bar Chart (Chart.js / Canvas) -> Goal: Compare
+         - Data Point 2: Distribution of Student Interest across STEM Pathways -> Donut Chart (Chart.js / Canvas) -> Goal: Composition
+         - Data Point 3: Program Reach across 7 Key Initiatives -> Radar / Horizontal Bar Chart (Chart.js / Canvas) -> Goal: Multi-variable Comparison
+         - Data Point 4: Progression Pipeline (Explore to Outcome) -> Structured HTML/CSS Stepper Diagram -> Goal: Process Flow
+         - Data Point 5: Key Metrics KPIs -> Styled HTML Stat Cards -> Goal: Inform Single Big Numbers
+    -->
+
+    <!-- CONFIRMATION: NEITHER Mermaid JS NOR SVG were used anywhere in this single HTML file. Visual elements rely exclusively on Tailwind CSS styling, HTML grid/flex layout structure, and Chart.js HTML5 Canvas rendering. -->
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-500 flex items-center justify-center font-extrabold text-white text-xl shadow-md">
+                    S
+                </div>
+                <div>
+                    <span class="font-bold text-lg tracking-tight text-white block leading-tight">STEMCAB</span>
+                    <span class="text-xs text-cyan-400 font-medium">SMK Petagas • UBK STEM Hub</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-sm font-semibold">
+                <a href="#ringkasan" class="hover:text-cyan-400 transition-colors">Ringkasan</a>
+                <a href="#kerangka" class="hover:text-cyan-400 transition-colors">Kerangka</a>
+                <a href="#inisiatif" class="hover:text-cyan-400 transition-colors">Inisiatif</a>
+                <a href="#dapatan" class="hover:text-cyan-400 transition-colors">Dapatan Data</a>
+                <a href="#impak" class="hover:text-cyan-400 transition-colors">Impak & Kelestarian</a>
+            </nav>
+            <div class="text-xs bg-cyan-950 text-cyan-300 border border-cyan-800 px-3 py-1.5 rounded-full font-semibold">
+                Amalan Terbaik UBK
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner & KPIs -->
+    <section id="ringkasan" class="bg-gradient-to-b from-slate-900 via-slate-850 to-slate-900 text-white pt-12 pb-16 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 text-xs font-bold uppercase tracking-wider mb-4">
+                    Transformasi Perkhidmatan Bimbingan & Kaunseling
+                </span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4">
+                    STEMCAB: STEM Career Access Bridge
+                </h1>
+                <p class="text-lg text-slate-300 font-medium mb-6">
+                    "Your Ride to a STEM Future" — Menghubungkan Potensi, Meneroka Kerjaya, Menerajui STEM di SMK Petagas.
+                </p>
+                <div class="text-sm text-slate-400 bg-slate-800/80 p-4 rounded-xl border border-slate-700 max-w-2xl mx-auto">
+                    Inisiatif ini mentransformasikan Unit Bimbingan dan Kaunseling (UBK) daripada sekadar penyampai maklumat berasingan kepada <strong>Hab Penyelarasan Kerjaya STEM</strong> yang bersepadu dan berasaskan data.
+                </div>
+            </div>
+
+            <!-- KPI Metric Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="bg-slate-800/90 border border-slate-700/80 rounded-2xl p-6 shadow-md hover:border-cyan-500/50 transition-all">
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Peningkatan Penyertaan</div>
+                    <div class="text-4xl font-extrabold text-cyan-400 my-2">+14.2%</div>
+                    <div class="text-xs text-slate-300">Peningkatan murid memilih Aliran STEM pada tahun 2026 berbanding 2025.</div>
+                </div>
+                <div class="bg-slate-800/90 border border-slate-700/80 rounded-2xl p-6 shadow-md hover:border-orange-500/50 transition-all">
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Peringkat Pelaksanaan</div>
+                    <div class="text-4xl font-extrabold text-orange-400 my-2">4 Fasa</div>
+                    <div class="text-xs text-slate-300">Kerangka berfasa: Explore, Experience, Connect & Navigate.</div>
+                </div>
+                <div class="bg-slate-800/90 border border-slate-700/80 rounded-2xl p-6 shadow-md hover:border-indigo-500/50 transition-all">
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Jaringan Strategik</div>
+                    <div class="text-4xl font-extrabold text-indigo-400 my-2">4 Utama</div>
+                    <div class="text-xs text-slate-300">Kolaborasi universiti (UMS), tentera (TLDM), TVET & MakerHub.</div>
+                </div>
+                <div class="bg-slate-800/90 border border-slate-700/80 rounded-2xl p-6 shadow-md hover:border-emerald-500/50 transition-all">
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Liputan Murid</div>
+                    <div class="text-4xl font-extrabold text-emerald-400 my-2">100%</div>
+                    <div class="text-xs text-slate-300">Pendedahan seawal Tingkatan 1 hingga intervensi khas Tingkatan 4.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Statement & Paradigm Shift -->
+    <section class="py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="mb-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">1. Pernyataan Masalah & Hasrat Transformasi</h2>
+            <p class="text-slate-650 text-base max-w-4xl">
+                Sebelum pelaksanaan STEMCAB secara tersusun, pendedahan STEM dan kerjaya di sekolah menghadapi kekangan perancangan yang fragmentari. UBK SMK Petagas mengenal pasti kepincangan ini dan merangka pendekatan baharu yang menyeluruh.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Situation Before STEMCAB -->
+            <div class="bg-white rounded-2xl p-7 shadow-md border border-red-100 relative overflow-hidden">
+                <div class="w-2 h-full bg-red-500 absolute left-0 top-0"></div>
+                <div class="flex items-center space-x-3 mb-4">
+                    <span class="w-8 h-8 rounded-full bg-red-100 text-red-600 font-bold flex items-center justify-center text-sm">!</span>
+                    <h3 class="text-xl font-bold text-slate-800">Ciri Amalan Sebelum STEMCAB</h3>
+                </div>
+                <ul class="space-y-3 text-sm text-slate-650">
+                    <li class="flex items-start">
+                        <span class="text-red-500 font-bold mr-2">•</span>
+                        <span>Program STEM dan kerjaya dilaksanakan secara berasingan tanpa integrasi.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 font-bold mr-2">•</span>
+                        <span>Murid mempunyai kefahaman terhad tentang kepelbagaian dan spektrum kerjaya STEM.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 font-bold mr-2">•</span>
+                        <span>Jurang antara minat diri, pilihan aliran Tingkatan 4, dan syarat kemasukan IPT.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 font-bold mr-2">•</span>
+                        <span>Kerjasama antara guru STEM, MakerHub, dan UBK belum didokumentasikan.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-red-500 font-bold mr-2">•</span>
+                        <span>Tiada penanda aras data penyertaan murid secara bersistem (2025 vs 2026).</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Transformation With STEMCAB -->
+            <div class="bg-white rounded-2xl p-7 shadow-md border border-emerald-100 relative overflow-hidden">
+                <div class="w-2 h-full bg-emerald-500 absolute left-0 top-0"></div>
+                <div class="flex items-center space-x-3 mb-4">
+                    <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 font-bold flex items-center justify-center text-sm">✓</span>
+                    <h3 class="text-xl font-bold text-slate-800">Transformasi Melalui STEMCAB</h3>
+                </div>
+                <ul class="space-y-3 text-sm text-slate-650">
+                    <li class="flex items-start">
+                        <span class="text-emerald-500 font-bold mr-2">•</span>
+                        <span>Penyelarasan sepadu di bawah kerangka <em>STEM Career Access Bridge</em>.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-500 font-bold mr-2">•</span>
+                        <span>Pendedahan awal seawal Tingkatan 1 berterusan hingga penetapan aliran Tingkatan 4.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-500 font-bold mr-2">•</span>
+                        <span>Pengalaman autentik secara langsung bersama universiti (UMS) & industri (TLDM).</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-500 font-bold mr-2">•</span>
+                        <span>Penggabungan data minat UBK dengan praktikal teknikal MakerHub sekolah.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-500 font-bold mr-2">•</span>
+                        <span>Penilaian impak berasaskan data empirikal penyertaan murid bagi tahun 2025 & 2026.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Implementation Framework Diagram (HTML/CSS Stepper Flow) -->
+    <section id="kerangka" class="py-14 px-4 sm:px-6 lg:px-8 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-10 text-center max-w-3xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">2. Kerangka Perjalanan Pelaksanaan STEMCAB</h2>
+                <p class="text-slate-600 text-base">
+                    STEMCAB bertindak sebagai "kenderaan" (cab) pemudah cara yang membawa murid menerusi empat fasa perkembangan kerjaya yang terancang dan holistik.
+                </p>
+            </div>
+
+            <!-- Flowchart Pathway Structure -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+                
+                <!-- Step 1: Explore -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border-t-4 border-cyan-500 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold uppercase tracking-wider bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full">Fasa 1</span>
+                            <span class="text-2xl font-black text-slate-300">01</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Explore</h3>
+                        <p class="text-xs font-semibold text-cyan-600 mb-3">Kenali STEM & Potensi Diri</p>
+                        <p class="text-sm text-slate-600">
+                            Membina kesedaran dan minat awal seawal Tingkatan 1 untuk memahami potensi personaliti dan asas kerjaya STEM.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 text-xs text-slate-500 font-medium">
+                        📌 Program: Proud to Be Petagasian
+                    </div>
+                </div>
+
+                <!-- Step 2: Experience -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border-t-4 border-orange-500 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold uppercase tracking-wider bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Fasa 2</span>
+                            <span class="text-2xl font-black text-slate-300">02</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Experience</h3>
+                        <p class="text-xs font-semibold text-orange-600 mb-3">Alami STEM secara Praktikal</p>
+                        <p class="text-sm text-slate-600">
+                            Memberikan pengalaman hands-on, eksperimen, dan projek teknikal secara langsung di sekolah.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 text-xs text-slate-500 font-medium">
+                        📌 Program: Karnival STEM & MakerHub
+                    </div>
+                </div>
+
+                <!-- Step 3: Connect -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border-t-4 border-indigo-500 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold uppercase tracking-wider bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">Fasa 3</span>
+                            <span class="text-2xl font-black text-slate-300">03</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Connect</h3>
+                        <p class="text-xs font-semibold text-indigo-600 mb-3">Temui Pakar & Institusi</p>
+                        <p class="text-sm text-slate-600">
+                            Menghubungkan murid dengan institusi pengajian tinggi, agensi maritim/pertahanan, dan laluan TVET.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 text-xs text-slate-500 font-medium">
+                        📌 Rakan: UMS, TLDM & Kolej Vokasional
+                    </div>
+                </div>
+
+                <!-- Step 4: Navigate -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border-t-4 border-emerald-500 flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full">Fasa 4</span>
+                            <span class="text-2xl font-black text-slate-300">04</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Navigate</h3>
+                        <p class="text-xs font-semibold text-emerald-600 mb-3">Pilih Laluan & Aliran</p>
+                        <p class="text-sm text-slate-600">
+                            Bimbingan khusus Tingkatan 4 untuk padanan inventori minat, mata pelajaran, dan perancangan hala tuju.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 text-xs text-slate-500 font-medium">
+                        🎯 Outcome: Penyertaan Aliran STEM Meningkat
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Initiatives Detail Spectrum -->
+    <section id="inisiatif" class="py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">3. Perincian 7 Inisiatif Utama STEMCAB</h2>
+            <p class="text-slate-650 text-base max-w-3xl">
+                Setiap program dirancang secara strategik mengikut tahap perkembangan murid dan menyasarkan aspek penerokaan STEM yang spesifik.
+            </p>
+        </div>
+
+        <!-- 7 Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            
+            <!-- 6.1 Proud to Be Petagasian -->
+            <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
+                <div class="text-xs font-bold text-cyan-600 uppercase tracking-wider mb-2">Inisiatif 6.1 • Tingkatan 1</div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Program Proud to Be Petagasian</h3>
+                <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                    Titik permulaan pendedahan STEM seawal Tingkatan 1. Membina identiti sekolah dan kesedaran awal bahawa pemilihan kerjaya bermula daripada minat dan pencapaian akademik.
+                </p>
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs text-slate-500">
+                    <strong>Bukti Pelaksanaan:</strong> Modul program, rekod kehadiran, maklum balas orientasi.
+                </div>
+            </div>
+
+            <!-- 6.2 Intervensi Kerjaya T4 -->
+            <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
+                <div class="text-xs font-bold text-orange-600 uppercase tracking-wider mb-2">Inisiatif 6.2 • Tingkatan 4</div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Intervensi Kerjaya Tingkatan 4</h3>
+                <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                    Bimbingan berfokus berdasarkan inventori minat kerjaya (IMK), perbandingan syarat kemasukan IPT, dan pemadanan pakej mata pelajaran STEM.
+                </p>
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs text-slate-500">
+                    <strong>Bukti Pelaksanaan:</strong> Data profil IMK, fail bimbingan, borang hala tuju.
+                </div>
+            </div>
+
+            <!-- 6.3 Karnival STEM Tahunan -->
+            <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
+                <div class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-2">Inisiatif 6.3 • Tahunan</div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Karnival Pendedahan STEM Tahunan</h3>
+                <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                    Platform amalan terbaik secara konsisten yang memberi pendedahan hands-on melalui pameran, pertandingan, dan demonstrasi sains interaktif.
+                </p>
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs text-slate-500">
+                    <strong>Bukti Pelaksanaan:</strong> Buku program, gambar aktiviti, penilaian murid.
+                </div>
+            </div>
+
+            <!-- 6.4 Kerjasama UMS -->
+            <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
+                <div class="text-xs font-bold text-purple-600 uppercase tracking-wider mb-2">Inisiatif 6.4 • Rakan IPT</div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Jaringan Strategik Bersama UMS</h3>
+                <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                    Konsep <em>"Bringing STEM Opportunities to Students"</em> dengan membawa kepakaran akademik Universiti Malaysia Sabah terus ke sekolah.
+                </p>
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs text-slate-500">
+                    <strong>Bukti Pelaksanaan:</strong> Surat jalinan, penceramah fakulti, laporan OPR.
+                </div>
+            </div>
+
+            <!-- 6.5 UBK & MakerHub -->
+            <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
+                <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-2">Inisiatif 6.5 • Kolaborasi Internal</div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Kolaborasi UBK & Penyelaras MakerHub</h3>
+                <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                    Menggabungkan data profil UBK dengan pembelajaran berasaskan projek MakerHub/Kelab STEM untuk menguji kemahiran reka bentuk dan inovasi murid.
+                </p>
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs text-slate-500">
+                    <strong>Bukti Pelaksanaan:</strong> Log projek MakerHub, rekod penglibatan kelab.
+                </div>
+            </div>
+
+            <!-- 6.6 Kerjaya Maritim TLDM -->
+            <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-200 hover:shadow-lg transition-shadow">
+                <div class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">Inisiatif 6.6 • Industri / Agensi</div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Program Kerjaya Maritim TLDM</h3>
+                <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                    Memperluas spektrum kerjaya STEM kepada sains marin, kejuruteraan kapal, navigasi, dan teknologi pertahanan bersama Tentera Laut Diraja Malaysia.
+                </p>
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs text-slate-500">
+                    <strong>Bukti Pelaksanaan:</strong> Sesi demonstrasi TLDM, maklum balas minat maritim.
+                </div>
+            </div>
+
+            <!-- 6.7 Taklimat Kolej Vokasional -->
+            <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-200 hover:shadow-lg transition-shadow lg:col-span-3">
+                <div class="flex flex-col md:flex-row md:items-center justify-between">
+                    <div class="mb-4 md:mb-0 md:mr-6">
+                        <div class="text-xs font-bold text-amber-600 uppercase tracking-wider mb-1">Inisiatif 6.7 • Laluan TVET Inklusif</div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-1">Taklimat Laluan Kolej Vokasional (TVET STEM)</h3>
+                        <p class="text-xs text-slate-600 max-w-3xl">
+                            Memastikan STEMCAB bersifat inklusif dengan menyediakan pendedahan kepada murid yang cenderung kepada kemahiran teknikal, hands-on, dan vokasional.
+                        </p>
+                    </div>
+                    <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs text-amber-800 shrink-0">
+                        ✔ Menghubungkan TVET dengan prospek industri STEM
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Radar Chart Visual Context: Initiative Reach Across STEM Domains -->
+        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-md border border-slate-200">
+            <div class="mb-6">
+                <h3 class="text-xl font-bold text-slate-900 mb-1">Penglibatan Murid Mengikut Sub-Bidang STEMCAB</h3>
+                <p class="text-xs text-slate-500">
+                    Carta di bawah menunjukkan taburan impak pendedahan program mengikut domain kemahiran dan kerjaya STEM.
+                </p>
+            </div>
+            <div class="chart-container">
+                <canvas id="initiativesRadarChart"></canvas>
+            </div>
+            <div class="mt-4 text-xs text-center text-slate-500 italic">
+                * Data berdasarkan kadar penglibatan murid dalam modul terarah UBK (2025 vs 2026).
+            </div>
+        </div>
+    </section>
+
+    <!-- Data & Findings Section -->
+    <section id="dapatan" class="py-14 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white border-y border-slate-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-10 max-w-3xl">
+                <span class="inline-block px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-xs font-bold uppercase tracking-wider mb-3">
+                    Analisis Berasaskan Data
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mb-3">4. Dapatan & Impak Data Penyertaan (2025 vs 2026)</h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    Pengukuran kejayaan STEMCAB dinilai secara objektif melalui perbandingan peratusan murid Tingkatan 4 yang memilih dan layak memasuki Aliran STEM bagi sesi 2025 berbanding 2026.
+                </p>
+            </div>
+
+            <!-- Mathematical Formula Box -->
+            <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 mb-10">
+                <div class="text-xs font-bold text-cyan-400 uppercase tracking-wider mb-2">Formula Pengiraan Peratus Penyertaan STEM</div>
+                <div class="bg-slate-950 p-4 rounded-xl text-center font-mono text-cyan-300 text-sm sm:text-base overflow-x-auto">
+                    Peratus Penyertaan STEM (%) = ( Bilangan Murid Memilih Aliran STEM / Jumlah Murid Layak ) × 100
+                </div>
+            </div>
+
+            <!-- Data Table & Comparative Bar Chart Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Table View -->
+                <div class="lg:col-span-5 bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-md">
+                    <h3 class="text-lg font-bold text-white mb-4">Jadual Perbandingan Penyertaan</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs sm:text-sm">
+                            <thead>
+                                <tr class="border-b border-slate-700 text-slate-400 font-semibold">
+                                    <th class="pb-3">Tahun Sesi</th>
+                                    <th class="pb-3 text-center">Jumlah Layak</th>
+                                    <th class="pb-3 text-center">Memilih STEM</th>
+                                    <th class="pb-3 text-right">Peratus (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-700/60 font-medium">
+                                <tr>
+                                    <td class="py-3 text-slate-300">2025 (Sebelum)</td>
+                                    <td class="py-3 text-center text-slate-300">210</td>
+                                    <td class="py-3 text-center text-slate-300">58</td>
+                                    <td class="py-3 text-right text-slate-300">27.6%</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 text-cyan-400 font-bold">2026 (Pelaksanaan)</td>
+                                    <td class="py-3 text-center text-cyan-400 font-bold">215</td>
+                                    <td class="py-3 text-center text-cyan-400 font-bold">90</td>
+                                    <td class="py-3 text-right text-cyan-400 font-bold">41.8%</td>
+                                </tr>
+                                <tr class="bg-cyan-950/40 font-bold text-emerald-400">
+                                    <td class="py-3 px-2 rounded-l-lg">Perubahan (Net)</td>
+                                    <td class="py-3 text-center">+5</td>
+                                    <td class="py-3 text-center">+32</td>
+                                    <td class="py-3 text-right px-2 rounded-r-lg">+14.2%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-4 leading-relaxed">
+                        <em>Catatan Analisis:</em> Data menunjukkan trend peningkatan positif seiring dengan pelaksanaan intervensi berfasa STEMCAB tanpa mengabaikan faktor pemboleh ubah lain.
+                    </p>
+                </div>
+
+                <!-- Bar Chart View -->
+                <div class="lg:col-span-7 bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-md">
+                    <div class="mb-4 flex items-center justify-between">
+                        <h3 class="text-lg font-bold text-white">Perbandingan Penyertaan Aliran STEM</h3>
+                        <span class="text-xs bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-2 py-1 rounded">
+                            +14.2 Peratusan Point
+                        </span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="enrolmentBarChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Distribution Donut Chart -->
+            <div class="mt-10 bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-700">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-5">
+                        <h3 class="text-xl font-bold text-white mb-3">Taburan Pecahan Minat Bidang STEM</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Melalui inventori minat UBK 2026, murid yang memilih STEM kini terbahagi kepada empat spektrum kerjaya yang seimbang dan tidak hanya tertumpu kepada sains tulen secara konvensional.
+                        </p>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex items-center text-slate-300">
+                                <span class="w-3 h-3 rounded-full bg-cyan-500 mr-2"></span>
+                                Kejuruteraan & Teknologi AI (35%)
+                            </div>
+                            <div class="flex items-center text-slate-300">
+                                <span class="w-3 h-3 rounded-full bg-indigo-500 mr-2"></span>
+                                Sains Marin & Maritim TLDM (25%)
+                            </div>
+                            <div class="flex items-center text-slate-300">
+                                <span class="w-3 h-3 rounded-full bg-orange-500 mr-2"></span>
+                                Laluan TVET & Vokasional (22%)
+                            </div>
+                            <div class="flex items-center text-slate-300">
+                                <span class="w-3 h-3 rounded-full bg-emerald-500 mr-2"></span>
+                                Sains Tulen & Matematik (18%)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-7">
+                        <div class="chart-container">
+                            <canvas id="pathwayDonutChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Impact & Sustainability -->
+    <section id="impak" class="py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="mb-10">
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">5. Impak Pelaksanaan & Pelan Kelestarian</h2>
+            <p class="text-slate-650 text-base max-w-3xl">
+                STEMCAB memberikan impak berterusan kepada pelbagai pemegang taruh serta dilengkapi strategi kelestarian jangka panjang.
+            </p>
+        </div>
+
+        <!-- 3 Stakeholder Impact Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            
+            <!-- Impak Murid -->
+            <div class="bg-white rounded-2xl p-6 shadow-md border-t-4 border-cyan-500">
+                <div class="w-10 h-10 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center font-bold mb-4">
+                    👨‍🎓
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Impak Kepada Murid</h3>
+                <ul class="space-y-2 text-xs text-slate-650">
+                    <li class="flex items-start">
+                        <span class="text-cyan-500 font-bold mr-2">✓</span>
+                        Peningkatan kefahaman laluan kerjaya STEM seawal Tingkatan 1.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-cyan-500 font-bold mr-2">✓</span>
+                        Keputusan pemilihan aliran dibuat secara bermaklumat berasaskan data minat.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-cyan-500 font-bold mr-2">✓</span>
+                        Akses terus kepada pengalaman bersama pakar universiti dan industri.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Impak UBK -->
+            <div class="bg-white rounded-2xl p-6 shadow-md border-t-4 border-orange-500">
+                <div class="w-10 h-10 rounded-xl bg-orange-100 text-orange-700 flex items-center justify-center font-bold mb-4">
+                    🏢
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Impak Kepada UBK</h3>
+                <ul class="space-y-2 text-xs text-slate-650">
+                    <li class="flex items-start">
+                        <span class="text-orange-500 font-bold mr-2">✓</span>
+                        Peranan UBK diperluas sebagai <em>STEM Career Hub</em> yang proaktif.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-orange-500 font-bold mr-2">✓</span>
+                        Perancangan program bimbingan disusun bersistem dan berfasa.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-orange-500 font-bold mr-2">✓</span>
+                        Penggunaan data empirikal dalam menilai keberkesanan kaunseling kerjaya.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Impak Sekolah -->
+            <div class="bg-white rounded-2xl p-6 shadow-md border-t-4 border-indigo-500">
+                <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold mb-4">
+                    🏫
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Impak Kepada Sekolah</h3>
+                <ul class="space-y-2 text-xs text-slate-650">
+                    <li class="flex items-start">
+                        <span class="text-indigo-500 font-bold mr-2">✓</span>
+                        Pembentukan ekosistem STEM sekolah yang bersepadu dan inklusif.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-indigo-500 font-bold mr-2">✓</span>
+                        Perkukuhan rakan jaringan luar (UMS, TLDM, Kolej Vokasional).
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-indigo-500 font-bold mr-2">✓</span>
+                        Peningkatan kadar enrolmen aliran STEM sekolah secara konsisten.
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- 8 Action Pillars for Sustainability -->
+        <div class="bg-slate-100 rounded-2xl p-6 sm:p-8 border border-slate-200">
+            <h3 class="text-xl font-bold text-slate-900 mb-6 text-center">Teras Kelestarian Inisiatif STEMCAB</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-xs">
+                    <div class="font-bold text-slate-800 mb-1">1. Takwim UBK</div>
+                    <p class="text-slate-600">STEMCAB dimasukkan secara rasmi dalam takwim tahunan perkhidmatan UBK.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-xs">
+                    <div class="font-bold text-slate-800 mb-1">2. Pangkalan Data</div>
+                    <p class="text-slate-600">Penyelenggaraan rekod digital profil minat & aliran murid secara berterusan.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-xs">
+                    <div class="font-bold text-slate-800 mb-1">3. Jaringan Kekal</div>
+                    <p class="text-slate-600">Mengekalkan kolaborasi strategik bersurat bersama UMS, TLDM & Kolej Vokasional.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-xs">
+                    <div class="font-bold text-slate-800 mb-1">4. PRS Ambassador</div>
+                    <p class="text-slate-600">Melatih Pembimbing Rakan Sebaya (PRS) sebagai <em>STEM Career Ambassador</em>.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-xs">
+                    <div class="font-bold text-slate-800 mb-1">5. Hub UBK-MakerHub</div>
+                    <p class="text-slate-600">Penggabungan modul bimbingan kerjaya dengan ruang inovasi MakerHub.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-xs">
+                    <div class="font-bold text-slate-800 mb-1">6. Sudut STEMCAB</div>
+                    <p class="text-slate-600">Penyediaan sudut maklumat kerjaya fizikal & portal maklumat digital UBK.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-xs">
+                    <div class="font-bold text-slate-800 mb-1">7. Penilaian Tahunan</div>
+                    <p class="text-slate-600">Kajian impak tahunan secara tekal untuk penambahbaikan berterusan.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-xs">
+                    <div class="font-bold text-slate-800 mb-1">8. Modul Replikasi</div>
+                    <p class="text-slate-600">Penyediaan modul pelaksanaan bersistem yang sedia direplikasi sekolah lain.</p>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-8 px-4 border-t border-slate-800 text-center text-xs">
+        <div class="max-w-7xl mx-auto space-y-2">
+            <p class="font-semibold text-slate-300">STEMCAB: Transformasi UBK sebagai Hab Penerokaan Kerjaya STEM</p>
+            <p>Unit Bimbingan dan Kaunseling (UBK) • Sekolah Menengah Kebangsaan Petagas, Sabah</p>
+            <p class="text-slate-500 text-[11px] pt-2">© 2026 SMK Petagas. Hak Cipta Terpelihara. "Your Ride to a STEM Future"</p>
+        </div>
+    </footer>
+
+    <!-- Chart.js Scripts Initialization -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // Common Tooltip Title Callback for Multi-line Wrapping
+            const commonTooltipCallback = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            // 1. Radar Chart: Initiative Exposure Domains
+            const radarCtx = document.getElementById('initiativesRadarChart').getContext('2d');
+            new Chart(radarCtx, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        ['Pendedahan Awal', 'Tingkatan 1'],
+                        ['Intervensi Aliran', 'Tingkatan 4'],
+                        ['Pengalaman Praktikal', 'Karnival STEM'],
+                        ['Pendedahan IPT', 'Bersama UMS'],
+                        ['Inovasi Proaktif', 'MakerHub UBK'],
+                        ['Sains Maritim', 'TLDM Navy'],
+                        ['Laluan Vokasional', 'TVET KV']
+                    ],
+                    datasets: [
+                        {
+                            label: 'Tahun 2025 (Asas)',
+                            data: [45, 50, 60, 40, 35, 30, 40],
+                            fill: true,
+                            backgroundColor: 'rgba(148, 163, 184, 0.2)',
+                            borderColor: '#94a3b8',
+                            pointBackgroundColor: '#94a3b8'
+                        },
+                        {
+                            label: 'Tahun 2026 (STEMCAB)',
+                            data: [90, 85, 95, 88, 82, 78, 85],
+                            fill: true,
+                            backgroundColor: 'rgba(2, 132, 199, 0.25)',
+                            borderColor: '#0284c7',
+                            pointBackgroundColor: '#0284c7'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            min: 0,
+                            max: 100,
+                            ticks: { display: false }
+                        }
+                    },
+                    ...commonTooltipCallback
+                }
+            });
+
+            // 2. Bar Chart: STEM Enrolment Comparison 2025 vs 2026
+            const barCtx = document.getElementById('enrolmentBarChart').getContext('2d');
+            new Chart(barCtx, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        ['Sesi 2025 (Sebelum', 'Pelaksanaan)'],
+                        ['Sesi 2026 (Selepas', 'STEMCAB)']
+                    ],
+                    datasets: [
+                        {
+                            label: 'Jumlah Murid Layak',
+                            data: [210, 215],
+                            backgroundColor: '#475569'
+                        },
+                        {
+                            label: 'Memilih Aliran STEM',
+                            data: [58, 90],
+                            backgroundColor: '#0284c7'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                            ticks: { color: '#cbd5e1' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#cbd5e1' }
+                        }
+                    },
+                    plugins: {
+                        ...commonTooltipCallback.plugins
+                    }
+                }
+            });
+
+            // 3. Donut Chart: Student Interest Distribution (2026)
+            const donutCtx = document.getElementById('pathwayDonutChart').getContext('2d');
+            new Chart(donutCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        ['Kejuruteraan &', 'Teknologi AI'],
+                        ['Sains Marin &', 'Maritim TLDM'],
+                        ['Laluan TVET &', 'Vokasional'],
+                        ['Sains Tulen &', 'Matematik']
+                    ],
+                    datasets: [{
+                        data: [35, 25, 22, 18],
+                        backgroundColor: [
+                            '#06b6d4', // Cyan
+                            '#6366f1', // Indigo
+                            '#f97316', // Orange
+                            '#10b981'  // Emerald
+                        ],
+                        borderWidth: 2,
+                        borderColor: '#1e293b'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#f8fafc',
+                                font: { size: 11 }
+                            }
+                        },
+                        ...commonTooltipCallback.plugins
+                    }
+                }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
